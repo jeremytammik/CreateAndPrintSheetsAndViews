@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Part CAM Dimensions</Text>
+    <Description>Generate fabrication part ductwork top, side, front and isometric view sheet with dimensioning for each element type</Description>
+    <Assembly>PartCamDimensioner.dll</Assembly>
+    <FullClassName>PartCamDimensioner.Command</FullClassName>
+    <ClientId>31f50da5-c8e7-453f-9b67-649f0149701f</ClientId>
+    <VendorId>com.typepad.thebuildingcoder</VendorId>
+    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Part CAM Views</Text>
+    <Description>Create a sheet with top, side, front and isometric views for fabrication part ductwork dimensioning</Description>
+    <Assembly>PartCamDimensioner.dll</Assembly>
+    <FullClassName>PartCamDimensioner.CmdCreateSheetAndViews</FullClassName>
+    <ClientId>4834adf5-8078-4595-8b39-c61b0878d448</ClientId>
+    <VendorId>com.typepad.thebuildingcoder</VendorId>
+    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>
