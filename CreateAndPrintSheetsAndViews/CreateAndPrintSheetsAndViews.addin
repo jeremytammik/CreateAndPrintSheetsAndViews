@@ -11,9 +11,9 @@
   </AddIn>
   <AddIn Type="Command">
     <Text>Create and print views for single</Text>
-    <Description>Create and print sheets and views for all a single part</Description>
+    <Description>Create and print sheets and views for a single part</Description>
     <Assembly>CreateAndPrintSheetsAndViews.dll</Assembly>
-    <FullClassName>CreateAndPrintSheetsAndViews.Command</FullClassName>
+    <FullClassName>CreateAndPrintSheetsAndViews.CmdCreateAndPrintSheetAndViews</FullClassName>
     <ClientId>017a659d-c893-4c5e-9ae2-a261224fa918</ClientId>
     <VendorId>com.typepad.thebuildingcoder</VendorId>
     <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
