@@ -4,6 +4,7 @@ using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Events;
+using Autodesk.Revit.UI.Selection;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -531,6 +532,21 @@ namespace CreateAndPrintSheetsAndViews
       UIDocument uidoc = uiapp.ActiveUIDocument;
       Application app = uiapp.Application;
       Document doc = uidoc.Document;
+      Selection sel = uidoc.Selection;
+      ElementId id_sample_element;
+
+      try
+      {
+        Reference r = sel.PickObject(
+          ObjectType.Element,
+          "Please select an element");
+
+        id_sample_element = r.ElementId;
+      }
+      catch (OperationCanceledException)
+      {
+        return Result.Cancelled;
+      }
 
       uiapp.DialogBoxShowing
         += new EventHandler<DialogBoxShowingEventArgs>(
@@ -539,10 +555,9 @@ namespace CreateAndPrintSheetsAndViews
       using (Transaction t = new Transaction(doc))
       {
         t.Start("Create sheet and four views");
-        ElementId id_sample_element = new ElementId(14974273); // 70TG '1100 mmx600 mm-600 mmx600 mm-700 mmx600 mm' at (38.0286, -47.409, 0)
         Element e = doc.GetElement(id_sample_element);
         CreateSheetAndViewsFor(e);
-        bool save = true; // Util.AskYesNoQuestion("Save the sheet?");
+        bool save = Util.AskYesNoQuestion("Save the sheet?");
         if (save) 
         { 
           t.Commit();
