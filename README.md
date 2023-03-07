@@ -1,4 +1,4 @@
-# PartCamDimensioner
+# CreateAndPrintSheetsAndViews
 
-Revit C# add-in to analyse fabrication part ductwork and generate top, side, front and isometric view sheet with dimensioning for each element type.
+Revit C# add-in to generate and print to PDF and JPG an individual sheet and top, side, front and isometric views for each individual element in an HVAC ductwork system.
 
